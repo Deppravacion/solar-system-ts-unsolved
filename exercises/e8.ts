@@ -1,7 +1,22 @@
 // SPACE DATA EXERCISE 8
 // Return a Planet by a given moon name
+
+import { Planet } from "../data/data";
+
 //  must have destructured parameters
-export function findPlanetByMoon({ planets, moonName }) {}
+type PropsType = {
+  planets: Planet[];
+  moonName: string;
+};
+export function findPlanetByMoon({ planets, moonName }: PropsType) {
+  return planets.find((planet) => {
+    if (planet.moons !== undefined) {
+      return planet.moons.some(
+        (moon) => moon.toLowerCase() === moonName.toLowerCase()
+      );
+    }
+  });
+}
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-8"
