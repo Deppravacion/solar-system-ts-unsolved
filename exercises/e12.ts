@@ -5,9 +5,10 @@ import { AllDataProps } from "../data/data";
 
 // Return example: 42
 export const allPlanetsMoonsCount = (data: AllDataProps) => {
-  return data.planets.reduce((acc, planet) => {
-    return acc + (planet.moonsCount || 0);
-  }, 0);
+  return data.planets.reduce(
+    (acc, planet) => acc + (planet.moonsCount || 0),
+    0
+  );
 };
 
 // === TEST YOURSELF ===

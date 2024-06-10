@@ -9,13 +9,11 @@ type PropsType = {
   moonName: string;
 };
 export function findPlanetByMoon({ planets, moonName }: PropsType) {
-  return planets.find((planet) => {
-    if (planet.moons !== undefined) {
-      return planet.moons.some(
-        (moon) => moon.toLowerCase() === moonName.toLowerCase()
-      );
-    }
-  });
+  return planets.find(
+    (planet) =>
+      planet.moons &&
+      planet.moons.some((moon) => moon.toLowerCase() === moonName.toLowerCase())
+  );
 }
 
 // === TEST YOURSELF ===

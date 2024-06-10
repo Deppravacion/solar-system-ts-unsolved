@@ -10,5 +10,4 @@ export function find<T>(
       return element;
     }
   }
-  return undefined;
 }

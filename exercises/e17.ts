@@ -1,11 +1,12 @@
-export const minBy = <T>(
+export const minBy = <T, U>(
   array: T[],
-  cb: (element: T) => string | number
+  cb: (element: T) => U
 ): T | undefined => {
-  let temp = array[0];
+  if (!array[0]) return;
+  let temp: T = array[0];
   if (array.length) {
     for (let element of array) {
-      if (temp !== undefined && cb(temp) > cb(element)) {
+      if (cb(temp) > cb(element)) {
         temp = element;
       }
     }
@@ -19,7 +20,8 @@ export function maxBy<T>(
   array: T[],
   cb: (element: T) => string | number
 ): T | undefined {
-  let temp = array[0];
+  if (!array[0]) return;
+  let temp: T = array[0];
   if (array.length) {
     for (let element of array) {
       if (temp !== undefined && cb(temp) < cb(element)) {

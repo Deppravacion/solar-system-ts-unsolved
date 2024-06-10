@@ -11,7 +11,9 @@ export function getAsteroidDataByName({
   allData: AllDataProps;
   asteroidName: string;
 }) {
-  return allData.asteroids.find((roid) => roid.name.includes(asteroidName));
+  return allData.asteroids.find((asteroid) =>
+    asteroid.name.includes(asteroidName)
+  );
 }
 
 // === TEST YOURSELF ===

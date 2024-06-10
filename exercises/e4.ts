@@ -5,9 +5,11 @@
 import { Planets } from "../data/data";
 
 export function getPlanetNamesWithLowGravity(planets: Planets) {
-  return planets
-    .filter((planet) => planet.gravity < 10)
-    .map((planet) => planet.name);
+  return planets.reduce(
+    (acc: string[], planet) =>
+      planet.gravity < 10 ? [...acc, planet.name] : acc,
+    []
+  );
 }
 
 // === TEST YOURSELF ===

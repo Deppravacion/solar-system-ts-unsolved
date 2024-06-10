@@ -5,10 +5,11 @@
 import { AllDataProps } from "../data/data";
 
 export function getAveragePlanetsTemperature(data: AllDataProps) {
-  const temps = data.planets.reduce((acc, planet) => {
-    return acc + planet.avgTemp;
-  }, 0);
-  return temps / data.planets.length;
+  return (
+    data.planets.reduce((acc, planet) => {
+      return acc + planet.avgTemp;
+    }, 0) / data.planets.length
+  );
 }
 
 // === TEST YOURSELF ===
