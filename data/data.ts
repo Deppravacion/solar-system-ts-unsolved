@@ -22,6 +22,11 @@ export type Planet = {
 
 export type Planets = Planet[];
 
+export type AllDataProps = {
+  planets: Planet[];
+  asteroids: Asteroid[];
+};
+
 export type Asteroid = {
   name: string;
   discoveryYear: number;

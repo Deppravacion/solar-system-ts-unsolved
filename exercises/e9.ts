@@ -1,14 +1,11 @@
 // SPACE DATA EXERCISE 9
 // Return the data object of the planet "Earth"
 
-import { Asteroid, Planet } from "../data/data";
+import { AllDataProps } from "../data/data";
 
 // Return example: { key1: value1, key2: value2, ... , keyN: valueN }
-type DataProps = {
-  planets: Planet[];
-  asteroids: Asteroid[];
-};
-export let findEarthData = (data: DataProps) => {
+
+export let findEarthData = (data: AllDataProps) => {
   return data.planets.find((planet) => planet.name === "Earth");
 };
 
